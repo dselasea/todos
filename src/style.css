@@ -40,6 +40,13 @@ ul li {
   font-weight: 300;
 }
 
+form > input {
+  width: 100%;
+  border: none;
+  outline: 2px solid rgba(217, 217, 217, 0.595);
+  font-size: 1rem;
+  font-style: italic;
+}
 
 ul li input {
   cursor: pointer;
@@ -55,14 +62,6 @@ ul li .check-container {
   float: right;
   color: rgba(144, 144, 144, 0.759);
   cursor: move;
-}
-
-form > input {
-  width: 100%;
-  border: none;
-  outline: 2px solid rgba(217, 217, 217, 0.595);
-  font-size: 1rem;
-  font-style: italic;
 }
 
 form button {
