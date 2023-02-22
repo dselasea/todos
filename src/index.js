@@ -27,12 +27,9 @@ const tasks = [
 const taskList = document.querySelector('.tasks-list');
 
 const todoList = (tasks) => {
-  // tasks.map((task) => {
-  //   console.log(task.completed, task.index, task.description);
-  // })
   let htmlList = '';
   for(let i = 0; i < tasks.length; i += 1){
-    htmlList += `<li id=${tasks[i].index}><label class="check-container"><input type="checkbox" checked=${tasks[i].completed} >${tasks[i].description}</label></li>`
+    htmlList += `<li id=${tasks[i].index}><label class="check-container"><input type="checkbox" >${tasks[i].description}</label><i class="fa fa-ellipsis-v"></i></li>`
   }
 
   taskList.innerHTML = (htmlList);
