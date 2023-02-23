@@ -40,9 +40,10 @@ const todoList = (tasks) => {
 // Delete Todos 
 todoForm.addEventListener('click', (e) => {
   if(e.target.id){
+    let index = e.target.id;
     e.target.parentElement.remove();
-    const newArray = tasks.filter((task, taskIndex) =>  e.target.id !== taskIndex);
-    todoList(newArray);
+    const newArray = tasks.filter((task) =>  task.index !== index);
+    localStorage.setItem('todoData', JSON.stringify(newArray));
   }
 })
 
