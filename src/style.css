@@ -36,7 +36,7 @@ body {
 .todos h1,
 ul li,
 form .input,
-form button {
+.clear {
   padding: 1.2rem;
 }
 
@@ -64,11 +64,28 @@ ul li .check-container {
   padding-left: 0.5rem;
 }
 
+.trash {
+  float: right;
+  color: rgba(144, 144, 144, 0.759);
+  cursor: pointer;
+  margin-top: -1.4px;
+  padding-right: 1.2rem;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.trash:hover {
+  opacity: 1;
+}
+
 .fav {
   float: right;
   color: rgba(144, 144, 144, 0.759);
   cursor: move;
 }
+
+
+
 
 .faspin {
   font-size: 1rem;
@@ -79,7 +96,10 @@ ul li .check-container {
 
 .clear {
   width: 100%;
-  border: 2px solid rgba(217, 217, 217, 0.595);
+  border-top: 2px solid rgba(217, 217, 217, 0.595);
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
   background-color: #fff;
   border-bottom: 0;
   cursor: pointer;
