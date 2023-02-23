@@ -1,7 +1,8 @@
 import './style.css';
 import Todos from './todo';
+import { getStorage } from './storage.js';
 
-let tasks = [];
+let tasks = getStorage();
 const clearTodos = document.querySelector('.clear');
 // const deleteTodos = document.querySelector('.trash');
 const taskList = document.querySelector('.tasks-list');
@@ -15,6 +16,7 @@ todoForm.addEventListener('submit', (e) => {
   if(e.key = 'Enter'){
     if(inputTodos.value){
       tasks.push(todos);
+      console.log(tasks);
       clearInput();
       todoList(tasks);
     }
@@ -35,8 +37,8 @@ const todoList = (tasks) => {
 todoForm.addEventListener('click', (e) => {
   if(e.target.id){
     e.target.parentElement.remove();
-    console.log(tasks.splice(e.target.id, 1));
-    // return tasks.splice(e.target.id, 1);
+    tasks = Array.from(taskList.children);
+    console.log(tasks);
   }
 })
 
@@ -52,4 +54,3 @@ clearTodos.addEventListener('click', (e) => {
       tasks = [];
     }
 })
-
