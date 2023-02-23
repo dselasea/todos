@@ -2,9 +2,14 @@ import './style.css';
 import Todos from './todo';
 import { getStorage } from './storage.js';
 
+
 let tasks = getStorage();
+
+window.addEventListener('load', () => {
+  todoList(tasks);
+})
+
 const clearTodos = document.querySelector('.clear');
-// const deleteTodos = document.querySelector('.trash');
 const taskList = document.querySelector('.tasks-list');
 const todoForm = document.querySelector('.form');
 const inputTodos = document.querySelector('.form .input');
@@ -16,7 +21,7 @@ todoForm.addEventListener('submit', (e) => {
   if(e.key = 'Enter'){
     if(inputTodos.value){
       tasks.push(todos);
-      console.log(tasks);
+      localStorage.setItem('todoData', JSON.stringify(tasks));
       clearInput();
       todoList(tasks);
     }
@@ -29,7 +34,6 @@ const todoList = (tasks) => {
   for (let i = 0; i < tasks.length; i += 1) {
     htmlList += `<li><label class="check-container"><input type="checkbox" >${tasks[i].description}</label><i class="fa fa-ellipsis-v fav"></i><i class="fa fa-trash-o trash" id=${tasks[i].index}></i></li>`;
   }
-
   taskList.innerHTML = htmlList;
 };
 
@@ -37,8 +41,8 @@ const todoList = (tasks) => {
 todoForm.addEventListener('click', (e) => {
   if(e.target.id){
     e.target.parentElement.remove();
-    tasks = Array.from(taskList.children);
-    console.log(tasks);
+    const newArray = tasks.filter((task, taskIndex) =>  e.target.id !== taskIndex);
+    todoList(newArray);
   }
 })
 
@@ -51,6 +55,7 @@ const clearInput = () => {
 clearTodos.addEventListener('click', (e) => {
     if(e.target.className === 'clear'){
       taskList.innerHTML = '';
-      tasks = [];
+      localStorage.clear();
+      tasks = getStorage();
     }
 })
