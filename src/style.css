@@ -64,17 +64,17 @@ ul li .check-container {
   padding-left: 0.5rem;
 }
 
-.trash {
+#trash {
   float: right;
   color: rgba(144, 144, 144, 0.759);
   cursor: pointer;
   margin-top: -1.4px;
   padding-right: 1.2rem;
-  opacity: 0;
+  opacity: 0.5;
   transition: 0.3s ease;
 }
 
-.trash:hover {
+#trash:hover {
   opacity: 1;
 }
 
