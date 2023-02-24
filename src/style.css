@@ -16,6 +16,21 @@ body {
   margin: 5rem auto;
 }
 
+.input {
+  width: 100%;
+  border: none;
+  outline: 2px solid rgba(217, 217, 217, 0.595);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.todos h1,
+ul li,
+form .input,
+.clear {
+  padding: 1.2rem;
+}
+
 .todos {
   width: 50%;
   border: 2px solid rgba(217, 217, 217, 0.595);
@@ -33,25 +48,10 @@ body {
   align-items: center;
 }
 
-.todos h1,
-ul li,
-form .input,
-.clear {
-  padding: 1.2rem;
-}
-
 ul li {
   list-style: none;
   border-top: 2px solid rgba(217, 217, 217, 0.595);
   font-weight: 300;
-}
-
-.input {
-  width: 100%;
-  border: none;
-  outline: 2px solid rgba(217, 217, 217, 0.595);
-  font-size: 1rem;
-  font-style: italic;
 }
 
 ul li #input {
@@ -97,9 +97,6 @@ ul li .check-container {
   cursor: move;
 }
 
-
-
-
 .faspin {
   font-size: 1rem;
   padding-right: 1.2rem;
@@ -114,7 +111,6 @@ ul li .check-container {
   border-left: 0;
   border-right: 0;
   background-color: #fff;
-  border-bottom: 0;
   cursor: pointer;
   color: rgba(123, 121, 121, 0.81);
 }
