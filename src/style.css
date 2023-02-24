@@ -54,7 +54,7 @@ ul li {
   font-weight: 300;
 }
 
-ul li #input {
+ul li .input-check {
   cursor: pointer;
   opacity: 0.6;
   margin-right: 1rem;

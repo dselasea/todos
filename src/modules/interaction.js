@@ -1,6 +1,7 @@
 import Todos from './todo.js';
 import getStorage from './storage.js';
 
+// const clearTodos = document.querySelector('.clear');
 const taskList = document.querySelector('.tasks-list');
 const todoForm = document.querySelector('.form');
 const inputTodos = document.querySelector('.form .input');
@@ -10,13 +11,11 @@ const tasks = getStorage();
 // Create Todos
 const todoList = (tasks) => {
   let htmlList = '';
-  const editableInput = document.createElement('input');
-  editableInput.id = 'text';
   for (let i = 0; i < tasks.length; i += 1) {
     htmlList += `
     <li id=${tasks[i].index}>
       <label class="check-container">
-        <input id="input" type="checkbox" ${tasks[i].completed} />
+        <input class="input-check" type="checkbox" ${tasks[i].completed} />
         </label>
         <span class="span" id=${tasks[i].index}>${tasks[i].description}</span>
       <i class="fa fa-ellipsis-v fav"></i>
@@ -86,7 +85,7 @@ taskList.addEventListener('click', (e) => {
 });
 
 // Save Content to Local Storage
-taskList.addEventListener('dblclick', (e) => {
+taskList.addEventListener('mouseout', (e) => {
   tasks.forEach((task, index) => {
     if (e.target.className === 'span' && Number(e.target.id) === index + 1) {
       e.target.contentEditable = false;
