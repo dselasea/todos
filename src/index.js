@@ -1,5 +1,2 @@
 import './style.css';
-import './modules/interaction'
-
-
-
+import './modules/interaction.js';

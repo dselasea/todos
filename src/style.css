@@ -54,14 +54,27 @@ ul li {
   font-style: italic;
 }
 
-ul li input {
+ul li #input {
   cursor: pointer;
   opacity: 0.6;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+}
+
+ul li #text {
+  border: 0;
+  font-size: 1.2rem;
+  width: 100px;
+  display: inline-block;
 }
 
 ul li .check-container {
   padding-left: 0.5rem;
+}
+
+.span {
+  width: 50%;
+  display: inline-block;
+  padding: 0.2rem;
 }
 
 #trash {

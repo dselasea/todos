@@ -5,19 +5,38 @@ const clearTodos = document.querySelector('.clear');
 const taskList = document.querySelector('.tasks-list');
 const todoForm = document.querySelector('.form');
 const inputTodos = document.querySelector('.form .input');
+const texts = document.querySelectorAll('.span');
 
 let tasks = getStorage();
 
 // Create Todos
 const todoList = (tasks) => {
   let htmlList = '';
+  let editableInput = document.createElement('input');
+  editableInput.id = 'text'
   for (let i = 0; i < tasks.length; i += 1) {
-    htmlList += `<li id=${tasks[i].index}><label class="check-container"><input type="checkbox" >${tasks[i].description}</label><i class="fa fa-ellipsis-v fav"></i><i class="fa fa-trash-o" id="trash"></i></li>`;
+    htmlList += `
+    <li id=${tasks[i].index}>
+      <label class="check-container">
+        <input id="input" type="checkbox" ${tasks[i].completed} />
+        </label>
+        <span class="span" id=${tasks[i].index}>${tasks[i].description}</span>
+      <i class="fa fa-ellipsis-v fav"></i>
+      <i class="fa fa-trash-o" id="trash"></i>
+    </li>`;
   }
   taskList.innerHTML = htmlList;
 };
 
-
+// // ReassignIndex
+const reAssignIndex = (tasks) => {
+  tasks.forEach((task, index) => {
+    task.index = index + 1;
+    return task.index;
+  });
+  localStorage.setItem('todoData', JSON.stringify(tasks));
+  todoList(tasks);
+};
 
 window.addEventListener('load', () => {
   todoList(tasks);
@@ -61,18 +80,28 @@ const deleteTodos = (e) => {
   }
 };
 
+// Edit Content
+taskList.addEventListener('click', (e) => {
+    if(e.target.className === 'span'){
+      e.target.contentEditable = true;
+    };
+});
+
+// Save Content to Local Storage
+taskList.addEventListener('dblclick', (e) => {
+  tasks.forEach((task,index) => {
+    if(e.target.className === 'span' && Number(e.target.id) === index + 1){
+      e.target.contentEditable = false;
+      task.description = e.target.textContent;
+      console.log(e.target.textContent);
+    };
+  });
+ localStorage.setItem('todoData', JSON.stringify(tasks));
+});
+
 taskList.addEventListener('click', deleteTodos);
 
-// ReassignIndex 
-const reAssignIndex = (tasks) => {
-  tasks.map((task, index) => {
-    return task.index = index + 1, index;
-  })
-  localStorage.setItem('todoData', JSON.stringify(tasks));
-  todoList(tasks);
-}
-
-// Clear all todos
+// Clear all completed todos
 clearTodos.addEventListener('click', (e) => {
   if (e.target.className === 'clear') {
     taskList.innerHTML = '';
