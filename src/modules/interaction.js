@@ -14,7 +14,7 @@ const todoList = (tasks) => {
   for (let i = 0; i < tasks.length; i += 1) {
     htmlList += `
     <li id=${tasks[i].index}>
-      <label class="check-container">
+        <label class="check-container">
         <input class="input-check" type="checkbox" ${tasks[i].completed} />
         </label>
         <span class="span" id=${tasks[i].index}>${tasks[i].description}</span>
