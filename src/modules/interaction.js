@@ -1,12 +1,11 @@
 import Todos from './todo.js';
 import getStorage from './storage.js';
 
-const clearTodos = document.querySelector('.clear');
 const taskList = document.querySelector('.tasks-list');
 const todoForm = document.querySelector('.form');
 const inputTodos = document.querySelector('.form .input');
 
-let tasks = getStorage();
+const tasks = getStorage();
 
 // Create Todos
 const todoList = (tasks) => {
@@ -98,12 +97,3 @@ taskList.addEventListener('dblclick', (e) => {
 });
 
 taskList.addEventListener('click', deleteTodos);
-
-// Clear all completed todos
-clearTodos.addEventListener('click', (e) => {
-  if (e.target.className === 'clear') {
-    taskList.innerHTML = '';
-    localStorage.clear();
-    tasks = getStorage();
-  }
-});
