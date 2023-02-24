@@ -1,19 +1,18 @@
 import Todos from './todo.js';
-import { getStorage } from './storage.js';
+import getStorage from './storage.js';
 
 const clearTodos = document.querySelector('.clear');
 const taskList = document.querySelector('.tasks-list');
 const todoForm = document.querySelector('.form');
 const inputTodos = document.querySelector('.form .input');
-const texts = document.querySelectorAll('.span');
 
 let tasks = getStorage();
 
 // Create Todos
 const todoList = (tasks) => {
   let htmlList = '';
-  let editableInput = document.createElement('input');
-  editableInput.id = 'text'
+  const editableInput = document.createElement('input');
+  editableInput.id = 'text';
   for (let i = 0; i < tasks.length; i += 1) {
     htmlList += `
     <li id=${tasks[i].index}>
@@ -82,21 +81,20 @@ const deleteTodos = (e) => {
 
 // Edit Content
 taskList.addEventListener('click', (e) => {
-    if(e.target.className === 'span'){
-      e.target.contentEditable = true;
-    };
+  if (e.target.className === 'span') {
+    e.target.contentEditable = true;
+  }
 });
 
 // Save Content to Local Storage
 taskList.addEventListener('dblclick', (e) => {
-  tasks.forEach((task,index) => {
-    if(e.target.className === 'span' && Number(e.target.id) === index + 1){
+  tasks.forEach((task, index) => {
+    if (e.target.className === 'span' && Number(e.target.id) === index + 1) {
       e.target.contentEditable = false;
       task.description = e.target.textContent;
-      console.log(e.target.textContent);
-    };
+    }
   });
- localStorage.setItem('todoData', JSON.stringify(tasks));
+  localStorage.setItem('todoData', JSON.stringify(tasks));
 });
 
 taskList.addEventListener('click', deleteTodos);
