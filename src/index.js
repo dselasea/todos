@@ -3,8 +3,8 @@ import Todos from './todo';
 import { getStorage } from './storage.js';
 
 
-let tasks = getStorage();
 
+let tasks = getStorage();
 window.addEventListener('load', () => {
   todoList(tasks);
 })
@@ -32,20 +32,34 @@ todoForm.addEventListener('submit', (e) => {
 const todoList = (tasks) => {
   let htmlList = '';
   for (let i = 0; i < tasks.length; i += 1) {
-    htmlList += `<li><label class="check-container"><input type="checkbox" >${tasks[i].description}</label><i class="fa fa-ellipsis-v fav"></i><i class="fa fa-trash-o trash" id=${tasks[i].index}></i></li>`;
+    htmlList += `<li id=${tasks[i].index}><label class="check-container"><input type="checkbox" >${tasks[i].description}</label><i class="fa fa-ellipsis-v fav"></i><i class="fa fa-trash-o trash"></i></li>`;
   }
   taskList.innerHTML = htmlList;
 };
 
 // Delete Todos 
-todoForm.addEventListener('click', (e) => {
-  if(e.target.id){
-    let index = e.target.id;
+const deleteTodos = (e) => {
+  const indexTodo = e.target.parentElement.id;
+  if(e.target.className = 'trash'){
     e.target.parentElement.remove();
-    const newArray = tasks.filter((task) =>  task.index !== index);
-    localStorage.setItem('todoData', JSON.stringify(newArray));
+    deleteFromStorage(indexTodo);
   }
-})
+}
+
+// Delete from storage
+const deleteFromStorage = (id) => {
+  tasks.filter((task, index) => {
+    if(task.index === Number(id)) {
+      console.log(task.index, Number(id));
+      tasks.splice(index, 1);
+    }
+  });
+  localStorage.setItem('todoData', JSON.stringify(tasks));
+}
+
+taskList.addEventListener('click', deleteTodos);
+
+
 
 // Clear input value
 const clearInput = () => {
