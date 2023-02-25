@@ -99,8 +99,8 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **Search Bar**
-- **Drag and Drop**
+- **Input Box**
+- **Local Storage**
 - **Add Todos**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -111,7 +111,7 @@ After you're finished please remove all the comments and instructions!
 
 > Add a link to your deployed project.
 
-- [Live Demo Link]- Not Available
+- [Live Demo Link]- https://dselasea.github.io/todos/dist/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -125,7 +125,7 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you need:npm
 
 <!--
 Example command:
@@ -137,7 +137,7 @@ Example command:
 
 ### Setup
 
-Clone this repository to your desired folder:
+Clone this repository to your desired folder: https://github.com/dselasea/todos.git
 
 <!--
 Example commands:
@@ -150,7 +150,7 @@ Example commands:
 
 ### Install
 
-Install this project with:
+Install this project with: npm install
 
 <!--
 Example command:
@@ -173,17 +173,6 @@ Example command:
 ```
 --->
 
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
 
 ### Deployment
 
@@ -262,13 +251,13 @@ I would like to thank...
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[Question_1]**
+- **[How long will it take a beginner to complete this project]**
 
-  - [Answer_1]
+  - [it depends, if you have mastered the fundamentals of JavaScript, It shouldn't take more that a day.]
 
-- **[Question_2]**
+- **[What did you learn while building this project]**
 
-  - [Answer_2]
+  - [I learned how to research on google]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
