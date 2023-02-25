@@ -1,6 +1,6 @@
 import Todos from './todo.js';
 import getStorage from './storage.js';
-import { updateCheck } from './checkTodos.js';
+import { updateCheck, clearCompleted } from './checkTodos.js';
 
 // const clearTodos = document.querySelector('.clear');
 const taskList = document.querySelector('.tasks-list');
@@ -95,11 +95,11 @@ taskList.addEventListener('click', (e) => {
   ch.forEach((c) => {
     c.addEventListener('change', () => {
       if(e.target.className === 'input-check'){
-        updateCheck(e.target.checked, e.target.id);
+        updateCheck(tasks, e.target.checked, e.target.id);
+        console.log(e.target.checked);
       }
     })
   })
-  
 })
 
 // Save Content to Local Storage
