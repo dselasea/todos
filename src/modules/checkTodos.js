@@ -1,7 +1,7 @@
 import './interaction.js';
-import getStorage from './storage.js';
+// import getStorage from './storage.js';
 
-let tasks = getStorage();
+let tasks = JSON.parse(localStorage.getItem('todoData'));
 
 export function updateCheck(checked, id) {
   tasks.forEach((task, index) => {
@@ -10,5 +10,4 @@ export function updateCheck(checked, id) {
       console.log(task.completed, id);
     }
   })
-  localStorage.setItem('todoData', JSON.stringify(tasks));
 };

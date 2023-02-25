@@ -6,7 +6,6 @@ import { updateCheck } from './checkTodos.js';
 const taskList = document.querySelector('.tasks-list');
 const todoForm = document.querySelector('.form');
 const inputTodos = document.querySelector('.form .input');
-const checkContainer = document.querySelector('.check-container input');
 
 const tasks = getStorage();
 
