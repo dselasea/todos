@@ -1,11 +1,12 @@
 import Todos from './todo.js';
 import getStorage from './storage.js';
-import { updateCheck, clearCompleted } from './checkTodos.js';
+import { updateCheck, clearCompleted, updateStorage } from './checkTodos.js';
 
 // const clearTodos = document.querySelector('.clear');
 const taskList = document.querySelector('.tasks-list');
 const todoForm = document.querySelector('.form');
 const inputTodos = document.querySelector('.form .input');
+const clearComplete = document.querySelector('.clear');
 
 const tasks = getStorage();
 
@@ -82,6 +83,9 @@ const deleteTodos = (e) => {
   }
 };
 
+// Call delete todo function
+taskList.addEventListener('click', deleteTodos);
+
 // Edit Content
 taskList.addEventListener('click', (e) => {
   if (e.target.className === 'span') {
@@ -96,7 +100,6 @@ taskList.addEventListener('click', (e) => {
     c.addEventListener('change', () => {
       if(e.target.className === 'input-check'){
         updateCheck(tasks, e.target.checked, e.target.id);
-        console.log(e.target.checked);
       }
     })
   })
@@ -113,4 +116,17 @@ taskList.addEventListener('dblclick', (e) => {
   localStorage.setItem('todoData', JSON.stringify(tasks));
 });
 
-taskList.addEventListener('click', deleteTodos);
+// Clear completed
+clearComplete.addEventListener('click', () => {
+  let tasks = getStorage();
+  clearCompleted(tasks);
+})
+
+clearComplete.addEventListener('click', (e) => {
+  const checks = document.querySelectorAll('.input-check');
+  checks.forEach((check) => {
+    if(check.checked){
+      check.parentElement.parentElement.remove();
+    }  
+  });
+})

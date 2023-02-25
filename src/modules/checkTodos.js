@@ -1,21 +1,25 @@
 import './interaction.js';
+import getStorage from './storage.js';
 
 export function updateCheck(local, checked, id) {
   local.forEach((task, index) => {
     if(Number(id) === index + 1){
       task.completed = checked;
-      console.log(task.completed, id);
     }
   })
   localStorage.setItem('todoData', JSON.stringify(local));
 };
 
-export function clearCompleted(local, checked) {
-  local.filter((task, index) => {
-    if(Number(id) === index + 1){
-      task.completed = checked;
-      console.log(task.completed, id);
-    }
+export function clearCompleted(local) {
+  let store = getStorage();
+  let complete = local.filter((task) => {
+    return task.completed === false;
   })
-  localStorage.setItem('todoData', JSON.stringify(local));
+  
+  complete.forEach((task, index) => {
+    task.index = index + 1;
+    return task.index;
+  });
+
+  localStorage.setItem('todoData', JSON.stringify(complete));
 };
