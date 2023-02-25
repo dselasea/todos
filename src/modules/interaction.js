@@ -12,6 +12,14 @@ const tasks = getStorage();
 
 // Create Todos
 const todoList = (tasks) => {
+  let count = 0;
+  for(let i = 0; i< tasks.length; i += 1) {
+    count += 1;
+    tasks[i].index = count;
+  }
+  localStorage.setItem('todoData', JSON.stringify(tasks));
+
+
   let htmlList = '';
   for (let i = 0; i < tasks.length; i += 1) {
     let isCompleted;
@@ -20,12 +28,12 @@ const todoList = (tasks) => {
     }
     htmlList += `
     <li id=${tasks[i].index}>
-        <label class="check-container">
-        <input class="input-check" id=${tasks[i].index} type="checkbox" ${isCompleted} />
-        </label>
-        <span class="span" id=${tasks[i].index}>${tasks[i].description}</span>
-      <i class="fa fa-ellipsis-v fav"></i>
-      <i class="fa fa-trash-o" id="trash"></i>
+    <label class="check-container">
+    <input class="input-check" id=${tasks[i].index} type="checkbox" ${isCompleted} />
+    </label>
+    <span class="span" id=${tasks[i].index}>${tasks[i].description}</span>
+    <i class="fa fa-ellipsis-v fav"></i>
+    <i class="fa fa-trash-o" id="trash"></i>
     </li>`;
   }
   taskList.innerHTML = htmlList;
@@ -106,7 +114,7 @@ taskList.addEventListener('click', (e) => {
 })
 
 // Save Content to Local Storage
-taskList.addEventListener('dblclick', (e) => {
+taskList.addEventListener('mouseout', (e) => {
   tasks.forEach((task, index) => {
     if (e.target.className === 'span' && Number(e.target.id) === index + 1) {
       e.target.contentEditable = false;
@@ -127,6 +135,7 @@ clearComplete.addEventListener('click', (e) => {
   checks.forEach((check) => {
     if(check.checked){
       check.parentElement.parentElement.remove();
+      check.style.textDecoration = 'line-through';
     }  
   });
 })
