@@ -1,8 +1,8 @@
+/* eslint-disable import/no-cycle */
 import Todos from './todo.js';
 import getStorage from './storage.js';
-import { updateCheck, clearCompleted, updateStorage } from './checkTodos.js';
+import { updateCheck, clearCompleted } from './checkTodos.js';
 
-// const clearTodos = document.querySelector('.clear');
 const taskList = document.querySelector('.tasks-list');
 const todoForm = document.querySelector('.form');
 const inputTodos = document.querySelector('.form .input');
@@ -13,17 +13,16 @@ const tasks = getStorage();
 // Create Todos
 const todoList = (tasks) => {
   let count = 0;
-  for(let i = 0; i< tasks.length; i += 1) {
+  for (let i = 0; i < tasks.length; i += 1) {
     count += 1;
     tasks[i].index = count;
   }
   localStorage.setItem('todoData', JSON.stringify(tasks));
 
-
   let htmlList = '';
   for (let i = 0; i < tasks.length; i += 1) {
     let isCompleted;
-    if(tasks[i].completed === true){
+    if (tasks[i].completed === true) {
       isCompleted = 'checked';
     }
     htmlList += `
@@ -101,17 +100,17 @@ taskList.addEventListener('click', (e) => {
   }
 });
 
-// Check content 
+// Check content
 taskList.addEventListener('click', (e) => {
   const ch = document.querySelectorAll('.input-check');
   ch.forEach((c) => {
     c.addEventListener('change', () => {
-      if(e.target.className === 'input-check'){
+      if (e.target.className === 'input-check') {
         updateCheck(tasks, e.target.checked, e.target.id);
       }
-    })
-  })
-})
+    });
+  });
+});
 
 // Save Content to Local Storage
 taskList.addEventListener('mouseout', (e) => {
@@ -126,16 +125,16 @@ taskList.addEventListener('mouseout', (e) => {
 
 // Clear completed
 clearComplete.addEventListener('click', () => {
-  let tasks = getStorage();
+  const tasks = getStorage();
   clearCompleted(tasks);
-})
+});
 
-clearComplete.addEventListener('click', (e) => {
+clearComplete.addEventListener('click', () => {
   const checks = document.querySelectorAll('.input-check');
   checks.forEach((check) => {
-    if(check.checked){
+    if (check.checked) {
       check.parentElement.parentElement.remove();
       check.style.textDecoration = 'line-through';
-    }  
+    }
   });
-})
+});
