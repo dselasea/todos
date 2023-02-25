@@ -1,10 +1,12 @@
 import Todos from './todo.js';
 import getStorage from './storage.js';
+import { updateCheck } from './checkTodos.js';
 
 // const clearTodos = document.querySelector('.clear');
 const taskList = document.querySelector('.tasks-list');
 const todoForm = document.querySelector('.form');
 const inputTodos = document.querySelector('.form .input');
+const checkContainer = document.querySelector('.check-container input');
 
 const tasks = getStorage();
 
@@ -12,10 +14,14 @@ const tasks = getStorage();
 const todoList = (tasks) => {
   let htmlList = '';
   for (let i = 0; i < tasks.length; i += 1) {
+    let isCompleted;
+    if(tasks[i].completed === true){
+      isCompleted = 'checked';
+    }
     htmlList += `
     <li id=${tasks[i].index}>
         <label class="check-container">
-        <input class="input-check" type="checkbox" ${tasks[i].completed} />
+        <input class="input-check" id=${tasks[i].index} type="checkbox" ${isCompleted} />
         </label>
         <span class="span" id=${tasks[i].index}>${tasks[i].description}</span>
       <i class="fa fa-ellipsis-v fav"></i>
@@ -84,8 +90,21 @@ taskList.addEventListener('click', (e) => {
   }
 });
 
+// Check content 
+taskList.addEventListener('click', (e) => {
+  const ch = document.querySelectorAll('.input-check');
+  ch.forEach((c) => {
+    c.addEventListener('change', () => {
+      if(e.target.className === 'input-check'){
+        updateCheck(e.target.checked, e.target.id);
+      }
+    })
+  })
+  
+})
+
 // Save Content to Local Storage
-taskList.addEventListener('mouseout', (e) => {
+taskList.addEventListener('dblclick', (e) => {
   tasks.forEach((task, index) => {
     if (e.target.className === 'span' && Number(e.target.id) === index + 1) {
       e.target.contentEditable = false;
