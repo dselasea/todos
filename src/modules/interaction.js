@@ -30,7 +30,7 @@ const todoList = (tasks) => {
     <label class="check-container">
     <input class="input-check" id=${tasks[i].index} type="checkbox" ${isCompleted} />
     </label>
-    <span class="span" id=${tasks[i].index}>${tasks[i].description}</span>
+    <p class="span" id=${tasks[i].index}>${tasks[i].description}</p>
     <i class="fa fa-ellipsis-v fav"></i>
     <i class="fa fa-trash-o" id="trash"></i>
     </li>`;
@@ -114,14 +114,17 @@ taskList.addEventListener('click', (e) => {
 });
 
 // Save Content to Local Storage
-taskList.addEventListener('mouseout', (e) => {
+taskList.addEventListener('keypress', (e) => {
+ if(e.key === 'Enter') {
   tasks.forEach((task, index) => {
     if (e.target.className === 'span' && Number(e.target.id) === index + 1) {
       e.target.contentEditable = false;
       task.description = e.target.textContent;
     }
   });
+  e.preventDefault();
   localStorage.setItem('todoData', JSON.stringify(tasks));
+ }
 });
 
 // Clear completed
