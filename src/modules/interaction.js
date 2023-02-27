@@ -35,6 +35,7 @@ const todoList = (tasks) => {
     <i class="fa fa-trash-o" id="trash"></i>
     </li>`;
   }
+ 
   taskList.innerHTML = htmlList;
 };
 
