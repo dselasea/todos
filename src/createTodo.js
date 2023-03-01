@@ -2,7 +2,6 @@ const createItem = (item = { task: item.value, index: itemsArray.length, complet
   const itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
   itemsArray.push(item);
   localStorage.setItem('items', JSON.stringify(itemsArray));
-
 };
 
 document.addEventListener('DOMContentLoaded', () => {

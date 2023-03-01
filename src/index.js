@@ -2,9 +2,8 @@ import './style.css';
 
 import { updateCompletedStatus } from './modules/status.js';
 
-const itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-
-export { itemsArray };
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+// export { itemsArray };
 
 function activateEditListeners() {
   const editBtn = document.querySelectorAll('.editBtn');
@@ -50,12 +49,6 @@ function activateSaveListeners() {
   });
 }
 
-function deleteItem(i) {
-  itemsArray = itemsArray.filter((item, index) => index !== i);
-  localStorage.setItem('items', JSON.stringify(itemsArray));
-  window.location.reload();
-}
-
 function activateDeleteListeners() {
   const deleteBtn = document.querySelectorAll('.deleteBtn');
   deleteBtn.forEach((db, i) => {
@@ -68,6 +61,11 @@ const createItem = (item = { task: item.value, index: itemsArray.length, complet
   localStorage.setItem('items', JSON.stringify(itemsArray));
   window.location.reload();
 };
+function deleteItem(i) {
+  itemsArray = itemsArray.filter((item, index) => index !== i);
+  localStorage.setItem('items', JSON.stringify(itemsArray));
+  window.location.reload();
+}
 
 document.querySelector('#enter').addEventListener('click', () => {
   const item = document.querySelector('#item');
