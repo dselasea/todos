@@ -67,28 +67,18 @@ After you're finished please remove all the comments and instructions!
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> The project uses HTML, CSS, JavaScript and setting up webpack
+The project uses HTML, CSS, JavaScript and setting up webpack
 
-<details>
-  <summary>Client</summary>
   <ul>
     <li><a href="">HTML</a></li>
   </ul>
-</details>
 
-<details>
-  <summary>Server</summary>
   <ul>
     <li><a href="">CSS</a></li>
   </ul>
-</details>
-
-<details>
-<summary>Database</summary>
   <ul>
     <li><a href="">JavaScript</a></li>
   </ul>
-</details>
 
 <!-- Features -->
 
