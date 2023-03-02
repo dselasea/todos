@@ -49,6 +49,12 @@ function activateSaveListeners() {
   });
 }
 
+function deleteItem(i) {
+  itemsArray = itemsArray.filter((item, index) => index !== i);
+  localStorage.setItem('items', JSON.stringify(itemsArray));
+  window.location.reload();
+}
+
 function activateDeleteListeners() {
   const deleteBtn = document.querySelectorAll('.deleteBtn');
   deleteBtn.forEach((db, i) => {
@@ -56,16 +62,15 @@ function activateDeleteListeners() {
   });
 }
 
-const createItem = (item = { task: item.value, index: itemsArray.length, completed: false }) => {
-  itemsArray.push(item);
+const createItem = (item) => {
+  const { task = '', completed = false } = item || {};
+  const index = itemsArray.length;
+
+  const newItem = { task, index, completed };
+  itemsArray.push(newItem);
+
   localStorage.setItem('items', JSON.stringify(itemsArray));
-  window.location.reload();
 };
-function deleteItem(i) {
-  itemsArray = itemsArray.filter((item, index) => index !== i);
-  localStorage.setItem('items', JSON.stringify(itemsArray));
-  window.location.reload();
-}
 
 document.querySelector('#enter').addEventListener('click', () => {
   const item = document.querySelector('#item');
@@ -131,6 +136,6 @@ clearBtn.addEventListener('click', () => {
   window.location.reload();
 });
 
-window.onload = function () {
+window.addEventListener('onload', () => {
   displayItems();
-};
+});

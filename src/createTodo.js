@@ -1,13 +1,21 @@
-const createItem = (item = { task: item.value, index: itemsArray.length, completed: false }) => {
-  const itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-  itemsArray.push(item);
+const itemsArray = JSON.parse(localStorage.getItem('items')) || [];
+
+const createItem = (item) => {
+  const { task = '', completed = false } = item || {};
+  const index = itemsArray.length;
+
+  const newItem = { task, index, completed };
+  itemsArray.push(newItem);
+
   localStorage.setItem('items', JSON.stringify(itemsArray));
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('#enter').addEventListener('click', () => {
-    const item = document.querySelector('#item');
-    createItem(item.value);
+  const enterButton = document.querySelector('#enter');
+  const itemInput = document.querySelector('#item');
+
+  enterButton.addEventListener('click', () => {
+    createItem({ task: itemInput.value });
   });
 });
 
