@@ -1,4 +1,3 @@
-// Use a constant instead of a let variable for the items array
 const itemsArray = JSON.parse(localStorage.getItem('items')) || [];
 
 const createItem = (item) => {

@@ -71,7 +71,6 @@ const createItem = (item) => {
   itemsArray.push(newItem);
 
   localStorage.setItem('items', JSON.stringify(itemsArray));
-  window.location.reload();
 };
 
 document.querySelector('#enter').addEventListener('click', () => {
