@@ -2,9 +2,9 @@ import './style.css';
 
 import { updateCompletedStatus } from './modules/status.js';
 
-const itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
-export { itemsArray };
+export default { itemsArray };
 
 function activateEditListeners() {
   const editBtn = document.querySelectorAll('.editBtn');
@@ -63,8 +63,13 @@ function activateDeleteListeners() {
   });
 }
 
-const createItem = (item = { task: item.value, index: itemsArray.length, completed: false }) => {
-  itemsArray.push(item);
+const createItem = (item) => {
+  const { task = '', completed = false } = item || {};
+  const index = itemsArray.length;
+
+  const newItem = { task, index, completed };
+  itemsArray.push(newItem);
+
   localStorage.setItem('items', JSON.stringify(itemsArray));
   window.location.reload();
 };
@@ -133,6 +138,6 @@ clearBtn.addEventListener('click', () => {
   window.location.reload();
 });
 
-window.onload = function () {
+window.addEventListener('load', () => {
   displayItems();
-};
+});
