@@ -1,8 +1,5 @@
 <a name="readme-top"></a>
-<div align="center">
-  <h3><b>Todo List</b></h3>
 
-</div>
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -24,6 +21,7 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
+
 
 # 📖 Todo List Application <a name="about-project"></a>
 
@@ -48,62 +46,106 @@ The project uses HTML, CSS, JavaScript and setting up webpack
     <li><a href="">JavaScript</a></li>
   </ul>
 
-
 ### Key Features <a name="key-features"></a>
-
-- **Input Box**
-- **Local Storage**
-- **Add Todos**
+- **Delete Feature**
+- **Clear completed**
+- **Add todos**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]- https://todosdsa.netlify.app/
+- [Live Demo Link](https://todosdsa.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-
 ## 💻 Getting Started <a name="getting-started"></a>
+### Prerequisites
 
-
-To get a local copy up and running, follow these steps.
-
-
+```
+ git
+ npm
+```
 
 ### Setup
 
-Clone this repository to your desired folder: 
+Clone this repository to your desired folder:
 
 ```
   cd my-folder
-  git clone [git@github.com:myaccount/my-project.git](https://github.com/dselasea/todos.git)
+  git clone https://github.com/dselasea/todos.git
 ```
 
 ### Install
 
-Install this project with: 
-```
-npm install
+Install this project with:
+
 
 ```
+  cd my-project
+  npm install
+```
 
+### Usage
+
+To run the project, execute the following command:
+
+
+```
+ npm start
+```
 
 ### Deployment
 
 You can deploy this project using:
 
-Netlify, Github Pages
+Netlify or Github pages
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 👥 Authors <a name="authors"></a>
+
+
+👤 **Daniel Selase Anyidoho**
+
+- GitHub: [@githubhandle](https://github.com/dselasea)
+- Twitter: [@twitterhandle](https://twitter.com/danielsanyidoho)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/dselasea)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## 🔭 Future Features <a name="future-features"></a>
+
+> Describe 1 - 3 features you will add to the project.
+
+- [ ] **Emojis**
+- [ ] **Drag and Drop**
+- [ ] **Colors**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+
+If you like this project...
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+> Give credit to everyone who inspired your codebase.
 
-I would like to thank Microverse for setting up this assignment.
+I would like to thank for this assignment
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,4 +156,3 @@ This project is [MIT](./LICENSE.md) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-# todos
