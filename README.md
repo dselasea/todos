@@ -130,14 +130,12 @@ Netlify or Github pages
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ⭐️ Show your support <a name="support"></a>
 
 
-If you like this project...
+If you like this project kindly give it a star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,7 +143,7 @@ If you like this project...
 
 > Give credit to everyone who inspired your codebase.
 
-I would like to thank for this assignment
+I would like to thank Microverse for this assignment
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
