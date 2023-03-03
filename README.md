@@ -1,7 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
   <h3><b>Todo List</b></h3>
-
 </div>
 # 📗 Table of Contents
 
@@ -48,45 +47,51 @@ The project uses HTML, CSS, JavaScript and setting up webpack
     <li><a href="">JavaScript</a></li>
   </ul>
 
-
 ### Key Features <a name="key-features"></a>
+- **Delete Feature**
+- **Clear completed**
+- **Add todos**
 
-- **Input Box**
-- **Local Storage**
-- **Add Todos**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
+
 - [Live Demo Link]- https://todosdsa.netlify.app/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-
 ## 💻 Getting Started <a name="getting-started"></a>
+### Prerequisites
 
-
-To get a local copy up and running, follow these steps.
-
-
+```
+ git
+ npm
+```
 
 ### Setup
 
-Clone this repository to your desired folder: 
+Clone this repository to your desired folder:
 
 ```
   cd my-folder
-  git clone [git@github.com:myaccount/my-project.git](https://github.com/dselasea/todos.git)
+  git clone https://github.com/dselasea/todos.git
 ```
 
 ### Install
 
-Install this project with: 
+Install this project with:
 ```
-npm install
+  cd my-project
+  npm install
+```
 
+### Usage
+
+To run the project, execute the following command:
+```
+ npm start
 ```
 
 
@@ -94,16 +99,45 @@ npm install
 
 You can deploy this project using:
 
-Netlify, Github Pages
+Netlify or Github pages
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 👥 Authors <a name="authors"></a>
+👤 **Daniel Selase Anyidoho**
+
+- GitHub: [@dselasea](https://github.com/dselasea)
+- Twitter: [@danielsanyidoho](https://twitter.com/danielsanyidoho)
+- LinkedIn: [Daniel Selase Anyidoho](https://linkedin.com/in/dselasea)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 🔭 Future Features <a name="future-features"></a>
+- [ ] **Emojis**
+- [ ] **Drag and Drop**
+- [ ] **Colors**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project kindly give it a star.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+I would like to thank Microverse for this assignment
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for setting up this assignment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,4 +148,3 @@ This project is [MIT](./LICENSE.md) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-# todos
