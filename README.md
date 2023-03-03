@@ -108,9 +108,9 @@ Netlify or Github pages
 
 👤 **Daniel Selase Anyidoho**
 
-- GitHub: [@githubhandle](https://github.com/dselasea)
-- Twitter: [@twitterhandle](https://twitter.com/danielsanyidoho)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/dselasea)
+- GitHub: [@dselasea](https://github.com/dselasea)
+- Twitter: [@danielsanyidoho](https://twitter.com/danielsanyidoho)
+- LinkedIn: [Daniel Selase Anyidoho](https://linkedin.com/in/dselasea)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
