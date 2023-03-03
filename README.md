@@ -59,7 +59,7 @@ The project uses HTML, CSS, JavaScript and setting up webpack
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]- [https://dselasea.github.io/todos/dist/](https://todosdsa.netlify.app/)
+- [Live Demo Link]- https://todosdsa.netlify.app/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
