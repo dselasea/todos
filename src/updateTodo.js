@@ -3,13 +3,12 @@ function updateTodo(index, completed) {
   const todoItems = tasksItems ? JSON.parse(tasksItems) : [];
   const updateTodo = todoItems[index];
 
-  if(updateTodo === 'string'){
-    todoItems[index] = {task: updateTodo, index, completed};
-  } else if (updateTodo){
+  if (updateTodo === 'string') {
+    todoItems[index] = { task: updateTodo, index, completed };
+  } else if (updateTodo) {
     updateTodo.completed = completed;
   }
   localStorage.setItem('items', JSON.stringify(todoItems));
-
 }
 
 module.exports = updateTodo;
