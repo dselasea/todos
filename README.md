@@ -1,5 +1,7 @@
 <a name="readme-top"></a>
-
+<div align="center">
+  <h3><b>Todo List</b></h3>
+</div>
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -21,7 +23,6 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
-
 
 # 📖 Todo List Application <a name="about-project"></a>
 
@@ -51,11 +52,13 @@ The project uses HTML, CSS, JavaScript and setting up webpack
 - **Clear completed**
 - **Add todos**
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://todosdsa.netlify.app/)
+
+- [Live Demo Link]- https://todosdsa.netlify.app/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,8 +82,6 @@ Clone this repository to your desired folder:
 ### Install
 
 Install this project with:
-
-
 ```
   cd my-project
   npm install
@@ -89,11 +90,10 @@ Install this project with:
 ### Usage
 
 To run the project, execute the following command:
-
-
 ```
  npm start
 ```
+
 
 ### Deployment
 
@@ -101,11 +101,10 @@ You can deploy this project using:
 
 Netlify or Github pages
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
-
-
 👤 **Daniel Selase Anyidoho**
 
 - GitHub: [@dselasea](https://github.com/dselasea)
@@ -116,15 +115,11 @@ Netlify or Github pages
 
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
-
 - [ ] **Emojis**
 - [ ] **Drag and Drop**
 - [ ] **Colors**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -134,16 +129,15 @@ Contributions, issues, and feature requests are welcome!
 
 ## ⭐️ Show your support <a name="support"></a>
 
-
 If you like this project kindly give it a star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
 I would like to thank Microverse for this assignment
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

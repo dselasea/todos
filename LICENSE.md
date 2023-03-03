@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2023 Selase Anyidoho and Michael
+
+Copyright (c) 2023 Selase Anyidoho and Micheal
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

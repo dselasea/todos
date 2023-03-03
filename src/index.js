@@ -3,7 +3,8 @@ import './style.css';
 import { updateCompletedStatus } from './modules/status.js';
 
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-// export { itemsArray };
+
+export default { itemsArray };
 
 function activateEditListeners() {
   const editBtn = document.querySelectorAll('.editBtn');
@@ -136,6 +137,6 @@ clearBtn.addEventListener('click', () => {
   window.location.reload();
 });
 
-window.addEventListener('onload', () => {
+window.addEventListener('load', () => {
   displayItems();
 });
